@@ -63,7 +63,7 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .modal-dialog {
-      width: 1200px;
+      width: 900px;
       margin: 30px auto;
     }
   .container {

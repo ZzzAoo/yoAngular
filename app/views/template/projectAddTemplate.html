@@ -1,5 +1,5 @@
 
-<form action="/index.php" class="form-horizontal"  method="post" onsubmit="return check();" ng-app="projectAddtemplateApp" >
+<form action="/index.php" class="form-horizontal" method="post" onsubmit="return check();" ng-app="projectAddtemplateApp" >
   <input type="hidden" value="" name="projectId" id="projectId">
   <div class="form-group">
     <label class="control-label col-sm-2">省份</label>
@@ -81,6 +81,8 @@
     </div>
   </div>
 </form>
+
+<script src="../../scripts/resources/fileinput.js"></script>
 <script>
   $(".file").fileinput({
     language: "zh",

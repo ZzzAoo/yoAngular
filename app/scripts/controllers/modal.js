@@ -3,6 +3,7 @@
  * User: ZzzAoo
  * Date: 2016/11/25.
  */
+'use strict';
 // angular.module('modalApp', [
 //     'ngAnimate',
 //     'ngCookies',

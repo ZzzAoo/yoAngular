@@ -30,15 +30,14 @@ angular
         controller: 'projectIndex',
         controllerAs: 'proIndex'
       })
-      // .when('/modalproject', {
-      //   templateUrl: 'views/template/projectAddTemplate.html',
-      //   controller: 'projectAddTemplate',
-      //   controllerAs: ''
-      // })
       .when('/scene', {
         templateUrl: 'views/sceneIndex.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
+      })
+      .when('/user', {
+        templateUrl: 'views/userIndex.html',
+        controller: 'userController'
       })
       .otherwise({
         redirectTo: '/'

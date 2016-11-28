@@ -26,20 +26,42 @@ angular.module('yoAngularApp')
     }).success(function (data,status) {
       $scope.dataList=data;
     })
+    $scope.goModal=function (sceneId) {
+      console.info(sceneId);
+      $http({
+        method:'get',
+        url:'http://192.168.8.9/renwu/index.php/Home/Index/sceneAll/sceneid/'+sceneId+''
+      }).success(function(data,status){
+        $scope.scene=data.scene;
+        $scope.projectid='7878787'
+      });
+    }
+  })
+  .controller('userController',function($scope,$http){
+    $scope.ol='popoopop'
   })
   //项目控制器
   .controller('projectIndex',function($scope,$http){
-    $http({
-      method:'get',
-      url:'http://192.168.8.9/renwu/index.php/Home/Index/project',
-    }).success(function(data,status){
-      $scope.project=data;
-    });
+      $http({
+        method:'get',
+        url:'http://192.168.8.9/renwu/index.php/Home/Index/project',
+      }).success(function(data,status){
+        $scope.project=data;
+      });
   })
-  //弹出层modal控制器
-  .controller('modal',function ($scope,$http) {
-      $scope.modalName='lihao'
-  });
+//   .controller('scenetAddController',function ($scope,$http) {
+//       $http({
+//         method:'get',
+//         url:'http://192.168.8.9/renwu/index.php/Home/Index/sceneAll/sceneid/'+"scene_rGgpu7IrLt"+'',
+//         headers:{
+//           'Content-Type': 'application/x-www-form-urlencoded'
+//         }
+//       }).success(function (data,status) {
+//         debugger;
+//         $scope.scene=data;
+//       })
+// })
+;
 
 $('.nav li').on('click',function () {
   if($(this).siblings().hasClass('active')){
@@ -48,4 +70,4 @@ $('.nav li').on('click',function () {
   }
   $(this).addClass('active');
 });
-
+// angular.module('App')
