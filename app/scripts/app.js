@@ -25,19 +25,31 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
+      //查看项目页面
       .when('/project', {
         templateUrl: 'views/projectIndex.html',
         controller: 'projectIndex',
         controllerAs: 'proIndex'
       })
+      //查看场景数据页面
       .when('/scene', {
         templateUrl: 'views/sceneIndex.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      // 路由用户中心
       .when('/user', {
         templateUrl: 'views/userIndex.html',
         controller: 'userController'
+      })
+      // 路由场景管理
+      .when('/scene/sceneManager/:sceneId', {
+        templateUrl: 'views/template/sceneAddTemplate.html',
+        controller: 'sceneManagerController'
+      })
+      .when('/test', {
+        templateUrl: 'views/template/uploadImgTemplate.html',
+        controller: 'uploadImgController'
       })
       .otherwise({
         redirectTo: '/'

@@ -1,6 +1,8 @@
 <div class="container table-responsive" ng-controller="sceneQueryController">
-  <p><a class="btn btn-lg btn-success pull-right" data-toggle="modal" data-target="#myModal"
-        ng-click="goModal(9090)">场景管理<span class="glyphicon glyphicon-plus"></span></a></p>
+  <!--<p><a class="btn btn-lg btn-success pull-right" data-toggle="modal" data-target="#myModal"-->
+        <!--ng-click="goModal(9090)">场景管理<span class="glyphicon glyphicon-plus"></span></a></p>-->
+  <p><a class="btn btn-md btn-success pull-right" ng-href="#/scene/sceneManager/0">
+    场景管理<span class="glyphicon glyphicon-plus"></span></a></p>
 <table class="table table-striped">
     <thead>
     <tr>
@@ -24,7 +26,8 @@
         <td> 分享 </td>
         <td class="do">
           <!--<a class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal">创建</a>-->
-          <a class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal" ng-click='goModal(project.sceneid)'>管理</a>
+          <!--<a class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal" ng-click='goModal(project.sceneid)'>管理</a>-->
+          <a class="btn btn-sm btn-success" ng-href="#/scene/sceneManager/{{project.sceneid}}">管理</a>
           <a class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal">删除</a>
           <!--<a href="/project/operation/delete/{{project.proId}}">删除</a>-->
         </td>

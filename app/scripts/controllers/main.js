@@ -37,6 +37,15 @@ angular.module('yoAngularApp')
       });
     }
   })
+  //路由场景管理controller，用于添加，管理scene;$routeParams绑定url参数
+  .controller('sceneManagerController',function ($scope,$http,$rootScope,$routeParams) {
+        $scope.scene,$scope.project="",$scope.title="场景维护";
+        $http.get('http://192.168.8.9/renwu/index.php/Home/Index/sceneAll/sceneid/'+$routeParams.sceneId+'')
+          .success(function(data){
+            $scope.scene=data.scene;
+            $scope.project={repeatSelect:'2',result:data.pro};
+          })
+  })
   .controller('userController',function($scope,$http){
     $scope.ol='popoopop'
   })
@@ -61,6 +70,10 @@ angular.module('yoAngularApp')
 //         $scope.scene=data;
 //       })
 // })
+  .controller('uploadImgController',function ($scope,$http) {
+
+  })
+
 ;
 
 $('.nav li').on('click',function () {

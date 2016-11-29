@@ -41,6 +41,9 @@
               <li><a ng-href="#/scene">场景管理</a></li>
               <li><a href="#/user">个人中心</a></li>
               <li><a ng-href="#/info">登录/注册</a></li>
+              <li><a ng-href="#/test">测试</a></li>
+              <li><p data-toggle="#myModal" data-target="#myModal">33</p></li>
+
             </ul>
           </div>
         </div>
@@ -53,11 +56,21 @@
       <!--<p><a class="btn btn-lg btn-success pull-right" data-toggle="modal" data-target="#myModal"-->
             <!--ng-click="modal='views/about.html'">2<span class="glyphicon glyphicon-plus"></span></a></p>-->
     </div>
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;深圳精点科技</p>
+
+
+    <!--<div class="footer">-->
+      <!--<div class="container">-->
+        <!--<p><span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;深圳精点科技</p>-->
+      <!--</div>-->
+    <!--</div>-->
+      <div class="form-group">
+        <label class="col-md-2 control-label">上传全景图</label>
+        <div class="col-md-8">
+          <!--<input id="file-5" class="file" name="proImg"  type="file" multiple data-preview-file-type="any" data-upload-url="/project/tImg" data-preview-file-icon="">-->
+          <input id="file-5" class="file" name="proImg"  multiple type="file" data-preview-file-type="any"
+                 data-upload-url="/index.php/Home/Index/img" data-preview-file-icon="">
+        </div>
       </div>
-    </div>
     </div>
 
     <!--<div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">-->
@@ -120,8 +133,9 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
+
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
@@ -130,6 +144,7 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="scripts/resources/fileinput.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
@@ -140,23 +155,25 @@
     <!--<script>-->
 
     <!--</script>-->
-    <script src="scripts/resources/fileinput.js"></script>
+
     <script>
-      $(".file").fileinput({
-        language: "zh",
-        maxFileSize: 30240,
-        uploadUrl:'/index.php/Home/Index/img',
-        allowedFileExtensions: ["jpg","jpeg"],
-        uploadAsync: true,
-        showPreview: false,
-        allowedFileExtensions : ['jpg', 'jpeg'],
-        elErrorContainer: '#errorBlock'
+      $(function(){
+        $(".file").fileinput({
+          language: "zh",
+          maxFileSize: 30240,
+          uploadUrl:'/index.php/Home/Index/img',
+          allowedFileExtensions: ["jpg","jpeg"],
+          uploadAsync: true,
+          showPreview: false,
+          allowedFileExtensions : ['jpg', 'jpeg'],
+          elErrorContainer: '#errorBlock'
+        });
       });
     </script>
     <script>
-      $(function(){
-        $('#myModal').modal('sss');
-      });
+//      $(function(){
+//        $('#myModal').modal('sss');
+//      });
 
 //      $('#myModal').modal().show(false)
 
